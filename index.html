@@ -5,60 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Future LLC | AI &amp; Technology Solutions</title>
     <meta name="description" content="Project Future LLC integrates AI, human skills, and technology to deliver AI/ML, cyber security, web development, and notary services.">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
+    <script>
+        // Applied before first paint so the theme never flashes
+        (function () {
+            try {
+                var t = localStorage.getItem('pf-theme');
+                if (t === 'dark' || t === 'light') {
+                    document.documentElement.setAttribute('data-theme', t);
+                }
+            } catch (e) { /* storage blocked, fall back to the OS preference */ }
+        })();
+    </script>
 </head>
 <body>
     <header>
         <nav>
-            <a href="index.html" class="logo">Project Future LLC</a>
+            <a href="index.html" class="logo"><img src="logo-mark.png" alt="" width="28" height="28"><span>Project Future</span></a>
             <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
                 <span></span><span></span><span></span>
             </button>
             <ul id="primary-nav">
-                <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="our-store.html">Store</a></li>
+                <li><a href="our-store.html">Pricing</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
+            <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme" aria-pressed="false">
+                <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+                <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+            <a href="#contact" class="btn btn--primary btn--sm nav-cta">Get in touch</a>        </nav>
     </header>
 
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <h1>We Make Technology Accessible</h1>
-            <p>Integrating AI, Human-Skills, and Technology.</p>
-            <a href="mailto:projectfuturellc@gmail.com" class="btn">Get In Touch</a>
+    <section class="hero">
+        <div class="container">
+            <h1>We make technology accessible</h1>
+            <p class="hero-lead">Integrating AI, human skills, and technology into advanced, effective products and services.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn--primary">Get in touch</a>
+                <a href="our-store.html" class="btn btn--secondary">View pricing</a>
+            </div>
+            <a class="trust" href="https://maps.google.com/maps?cid=11553199456930957904" target="_blank" rel="noopener noreferrer">
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span>Verified on Google Business</span>
+            </a>
         </div>
     </section>
 
-    <section id="about" class="section">
+    <section id="services" class="section section--alt">
         <div class="container">
-            <h2 class="section-title">About Us</h2>
-            <p>Project Future Integrates AI, Human-Skills, and Technology into delivering advanced and effective products and services. We are artists, developers, security professionals, and more.</p>
-        </div>
-    </section>
-
-    <section id="services" class="section section--tinted">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="service-grid">
-                <div class="service-card">
+            <div class="section-head">
+                <span class="eyebrow">What we do</span>
+                <h2 class="section-title">Services built on real expertise</h2>
+                <p class="section-lead">We are artists, developers, security professionals, and more.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <span class="card-icon" aria-hidden="true">
+                        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>
+                    </span>
                     <h3>AI &amp; Machine Learning</h3>
                     <p>Custom AI solutions to automate and optimize your business processes.</p>
                 </div>
-                <div class="service-card">
+                <div class="card">
+                    <span class="card-icon" aria-hidden="true">
+                        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    </span>
                     <h3>Cyber Security</h3>
                     <p>Protecting your digital assets with advanced security measures.</p>
                 </div>
-                <div class="service-card">
+                <div class="card">
+                    <span class="card-icon" aria-hidden="true">
+                        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </span>
                     <h3>Web Development</h3>
                     <p>Creating modern, responsive websites and web applications.</p>
                 </div>
-                <div class="service-card">
+                <div class="card">
+                    <span class="card-icon" aria-hidden="true">
+                        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
+                    </span>
                     <h3>Notary Services</h3>
                     <p>Providing reliable and secure notary services.</p>
                 </div>
@@ -66,15 +99,87 @@
         </div>
     </section>
 
-    <footer id="contact">
+    <section id="about" class="section">
         <div class="container">
-            <h2 class="footer-title">Get In Touch</h2>
-            <p class="footer-email"><a href="mailto:projectfuturellc@gmail.com">projectfuturellc@gmail.com</a></p>
-            <div class="footer-actions">
-                <a class="btn btn--ghost" href="https://maps.google.com/maps?cid=11553199456930957904" target="_blank" rel="noopener noreferrer">View Our Google Profile</a>
-                <a class="btn" href="https://search.google.com/local/writereview?placeid=ChIJAciReDO0tiIRUAqb0bE1VaA" target="_blank" rel="noopener noreferrer">Leave Us A Review</a>
+            <div class="section-head">
+                <span class="eyebrow">About us</span>
+                <h2 class="section-title">A team across disciplines</h2>
             </div>
-            <p class="footer-copyright">Copyright © 2026 Project Future - All Rights Reserved.</p>
+            <p class="about-text">Project Future integrates AI, human skills, and technology into delivering advanced and effective products and services. We are artists, developers, security professionals, and more.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="section section--alt">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Contact</span>
+                <h2 class="section-title">Let's talk about what you need</h2>
+                <p class="section-lead">Send us a message and we'll get back to you by email.</p>
+            </div>
+
+            <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <!-- Replace with the access key emailed to you by web3forms.com -->
+                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                <input type="hidden" name="subject" value="New enquiry from projectfuturellc.com">
+                <input type="hidden" name="from_name" value="Project Future website">
+
+                <label class="honeypot" aria-hidden="true">
+                    Leave this field empty
+                    <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
+                </label>
+
+                <div class="field">
+                    <label for="cf-name">Name</label>
+                    <input type="text" id="cf-name" name="name" autocomplete="name" required placeholder="Your name">
+                </div>
+                <div class="field">
+                    <label for="cf-email">Email</label>
+                    <input type="email" id="cf-email" name="email" autocomplete="email" required placeholder="you@example.com">
+                </div>
+                <div class="field">
+                    <label for="cf-message">How can we help?</label>
+                    <textarea id="cf-message" name="message" required placeholder="Tell us a bit about what you need."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn--primary">Send message</button>
+                <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            </form>
+
+            <p class="contact-alt">
+                Prefer email? <a href="mailto:projectfuturellc@gmail.com">projectfuturellc@gmail.com</a>
+                &nbsp;·&nbsp;
+                <a href="https://search.google.com/local/writereview?placeid=ChIJAciReDO0tiIRUAqb0bE1VaA" target="_blank" rel="noopener noreferrer">Leave a review</a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><img src="logo-mark.png" alt="" width="28" height="28"><span>Project Future</span></a>
+                    <p class="footer-tagline">Integrating AI, human skills, and technology.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="our-store.html">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="https://maps.google.com/maps?cid=11553199456930957904" target="_blank" rel="noopener noreferrer">Google profile</a></li>
+                            <li><a href="https://search.google.com/local/writereview?placeid=ChIJAciReDO0tiIRUAqb0bE1VaA" target="_blank" rel="noopener noreferrer">Leave a review</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-bottom">© 2026 Project Future LLC. All rights reserved.</p>
         </div>
     </footer>
     <script src="script.js"></script>
