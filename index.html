@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Future LLC | AI & Technology Solutions</title>
+    <title>Project Future LLC | AI &amp; Technology Solutions</title>
+    <meta name="description" content="Project Future LLC integrates AI, human skills, and technology to deliver AI/ML, cyber security, web development, and notary services.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Project Future LLC</div>
-            <ul>
+            <a href="index.html" class="logo">Project Future LLC</a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul id="primary-nav">
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="our-store.html">Store</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -27,36 +35,48 @@
         </div>
     </section>
 
-    <section id="about" class="container">
-        <h2 class="section-title">About Us</h2>
-        <p>Project Future Integrates AI, Human-Skills, and Technology into delivering advanced and effective products and services. We are artists, developers, security professionals, and more.</p>
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <p>Project Future Integrates AI, Human-Skills, and Technology into delivering advanced and effective products and services. We are artists, developers, security professionals, and more.</p>
+        </div>
     </section>
 
-    <section id="services" class="container">
-        <h2 class="section-title">Our Services</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <h3>AI & Machine Learning</h3>
-                <p>Custom AI solutions to automate and optimize your business processes.</p>
-            </div>
-            <div class="service-card">
-                <h3>Cyber Security</h3>
-                <p>Protecting your digital assets with advanced security measures.</p>
-            </div>
-            <div class="service-card">
-                <h3>Web Development</h3>
-                <p>Creating modern, responsive websites and web applications.</p>
-            </div>
-             <div class="service-card">
-                <h3>Notary Services</h3>
-                <p>Providing reliable and secure notary services.</p>
+    <section id="services" class="section section--tinted">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>AI &amp; Machine Learning</h3>
+                    <p>Custom AI solutions to automate and optimize your business processes.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Cyber Security</h3>
+                    <p>Protecting your digital assets with advanced security measures.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Web Development</h3>
+                    <p>Creating modern, responsive websites and web applications.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Notary Services</h3>
+                    <p>Providing reliable and secure notary services.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <footer id="contact">
-        <p>Copyright © 2026 Project Future - All Rights Reserved.</p>
-        <p><a href="mailto:projectfuturellc@gmail.com">projectfuturellc@gmail.com</a></p>
+        <div class="container">
+            <h2 class="footer-title">Get In Touch</h2>
+            <p class="footer-email"><a href="mailto:projectfuturellc@gmail.com">projectfuturellc@gmail.com</a></p>
+            <div class="footer-actions">
+                <a class="btn btn--ghost" href="https://maps.google.com/maps?cid=11553199456930957904" target="_blank" rel="noopener noreferrer">View Our Google Profile</a>
+                <a class="btn" href="https://search.google.com/local/writereview?placeid=ChIJAciReDO0tiIRUAqb0bE1VaA" target="_blank" rel="noopener noreferrer">Leave Us A Review</a>
+            </div>
+            <p class="footer-copyright">Copyright © 2026 Project Future - All Rights Reserved.</p>
+        </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

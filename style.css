@@ -1,107 +1,173 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
-
 :root {
     --primary-color: #6366f1;
     --secondary-color: #ec4899;
     --dark-color: #0f172a;
+    --dark-elevated: #1e293b;
     --light-color: #f8fafc;
     --accent-gold: #fbbf24;
-    --text-light: #94a3b8;
+
+    /* Muted text on DARK backgrounds */
+    --text-muted-on-dark: #cbd5e1;
+    /* Muted text on LIGHT cards - dark enough to pass WCAG AA */
+    --text-muted-on-light: #475569;
+
+    --brand-gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --header-height: 76px;
+    --radius: 16px;
+    --container-width: min(90%, 1200px);
 }
 
-* {
-    transition: all 0.3s ease;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
+    line-height: 1.65;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    color: var(--dark-color);
+    background: var(--dark-color);
+    color: var(--light-color);
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .container {
-    width: 85%;
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
-    padding: 0 20px;
+    width: var(--container-width);
+    margin-inline: auto;
 }
 
+/* Visible keyboard focus for accessibility */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--accent-gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* Offset anchor targets so the sticky header doesn't cover headings */
+section[id] {
+    scroll-margin-top: calc(var(--header-height) + 16px);
+}
+
+/* ---------------- Header ---------------- */
+
 header {
-    background: rgba(15, 23, 42, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     color: #fff;
-    padding: 20px 0;
-    min-height: 70px;
-    border-bottom: 2px solid;
-    border-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color)) 1;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-header a {
-    color: #fff;
-    text-decoration: none;
+header nav {
+    width: var(--container-width);
+    margin-inline: auto;
+    min-height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+header .logo {
+    font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+    font-weight: 700;
     text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 600;
     letter-spacing: 0.5px;
-    position: relative;
-}
-
-header a:hover {
-    color: var(--accent-gold);
-}
-
-header a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    transition: width 0.3s ease;
-}
-
-header a:hover::after {
-    width: 100%;
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    /* Gradient text can clip descenders without a little breathing room */
+    padding-block: 2px;
 }
 
 header ul {
     padding: 0;
     margin: 0;
     list-style: none;
-    float: right;
-    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 3vw, 36px);
 }
 
-header li {
-    display: inline;
-    padding: 0 25px;
-}
-
-header .logo {
-    float: left;
-    font-size: 28px;
-    font-weight: 700;
+header a:not(.logo) {
+    color: #fff;
+    text-decoration: none;
     text-transform: uppercase;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: 1px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+    padding-block: 6px;
+    transition: color 0.25s ease;
 }
+
+header a:not(.logo):hover {
+    color: var(--accent-gold);
+}
+
+header a:not(.logo)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--brand-gradient);
+    transition: width 0.25s ease;
+}
+
+header a:not(.logo):hover::after {
+    width: 100%;
+}
+
+/* Hamburger - hidden on desktop, shown via media query */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+}
+
+.nav-toggle span + span {
+    margin-top: 5px;
+}
+
+/* ---------------- Hero ---------------- */
 
 .hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: white;
-    padding: 150px 0;
+    background: var(--brand-gradient);
+    color: #fff;
+    padding: clamp(72px, 14vw, 150px) 0;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -110,35 +176,40 @@ header .logo {
 .hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.06) 0%, transparent 50%);
     pointer-events: none;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
+    width: var(--container-width);
+    margin-inline: auto;
 }
 
 .hero-content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 60px;
-    margin-bottom: 15px;
+    /* Fluid: never overflows small screens, never oversized on large ones */
+    font-size: clamp(2.125rem, 6vw, 3.75rem);
+    line-height: 1.12;
+    margin: 0 0 16px;
     font-weight: 700;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-    letter-spacing: -1px;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
 }
 
 .hero-content p {
-    font-size: 22px;
-    margin-bottom: 30px;
+    font-size: clamp(1rem, 2.2vw, 1.375rem);
+    margin: 0 auto 32px;
     font-weight: 300;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    max-width: 60ch;
 }
+
+/* ---------------- Button ---------------- */
 
 .btn {
     display: inline-block;
@@ -147,31 +218,47 @@ header .logo {
     padding: 15px 40px;
     text-decoration: none;
     border-radius: 50px;
-    margin-top: 20px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     box-shadow: 0 8px 20px rgba(251, 191, 36, 0.3);
     border: none;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 0.875rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(251, 191, 36, 0.4);
+    box-shadow: 0 12px 30px rgba(251, 191, 36, 0.45);
     background: linear-gradient(135deg, #fcd34d, var(--accent-gold));
 }
 
+/* Outlined variant for secondary actions */
+.btn--ghost {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(203, 213, 225, 0.45);
+    box-shadow: none;
+}
+
+.btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    box-shadow: none;
+}
+
+/* ---------------- Sections ---------------- */
+
 .section-title {
     text-align: center;
-    padding-bottom: 40px;
-    font-size: 42px;
+    font-size: clamp(1.75rem, 4.5vw, 2.625rem);
     font-family: 'Playfair Display', serif;
-    color: white;
+    color: #fff;
     font-weight: 700;
-    position: relative;
-    margin-bottom: 20px;
+    margin: 0 0 48px;
+    line-height: 1.2;
 }
 
 .section-title::after {
@@ -179,115 +266,227 @@ header .logo {
     display: block;
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: var(--brand-gradient);
     margin: 20px auto 0;
     border-radius: 2px;
 }
 
-#about, #services {
-    padding: 80px 0;
+.section {
+    padding: clamp(56px, 9vw, 88px) 0;
 }
 
-#about {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(236, 72, 153, 0.05));
-    border-radius: 20px;
-    margin: 40px 0;
-    padding: 60px 40px;
-    color: white;
+/* Full-bleed tinted band - the background spans the viewport,
+   while the inner .container keeps the text aligned to the grid */
+.section--tinted {
+    background: linear-gradient(135deg, var(--dark-elevated), var(--dark-color));
 }
 
 #about p {
-    font-size: 18px;
+    font-size: clamp(1rem, 1.6vw, 1.125rem);
     line-height: 1.8;
-    color: var(--text-light);
+    color: var(--text-muted-on-dark);
+    max-width: 70ch;
+    margin-inline: auto;
+    text-align: center;
 }
 
-#services {
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.8));
-}
+/* ---------------- Service / store cards ---------------- */
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: 28px;
 }
 
 .service-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.9));
+    background: var(--light-color);
     padding: 40px 30px;
-    border-radius: 15px;
+    border-radius: var(--radius);
     text-align: center;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card::before {
     content: '';
     position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 200px;
-    height: 200px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--brand-gradient);
     opacity: 0;
-    border-radius: 50%;
-    transition: all 0.5s ease;
+    transition: opacity 0.3s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
+    transform: translateY(-8px);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.35);
 }
 
 .service-card:hover::before {
-    opacity: 0.1;
+    opacity: 1;
 }
 
 .service-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
+    font-size: 1.375rem;
     color: var(--dark-color);
-    margin-bottom: 15px;
+    margin: 0 0 12px;
     font-weight: 700;
-    position: relative;
-    z-index: 2;
+    line-height: 1.3;
 }
 
 .service-card p {
-    color: var(--text-light);
-    font-size: 16px;
+    /* Dark slate on a light card - readable, unlike the old light gray */
+    color: var(--text-muted-on-light);
+    font-size: 1rem;
     line-height: 1.6;
-    position: relative;
-    z-index: 2;
+    margin: 0;
 }
 
+.service-card .price {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+/* ---------------- Footer ---------------- */
+
 footer {
-    background: linear-gradient(135deg, var(--dark-color), #1e293b);
+    background: linear-gradient(135deg, var(--dark-color), var(--dark-elevated));
     color: #fff;
     text-align: center;
-    padding: 50px 0;
-    margin-top: 80px;
-    border-top: 2px solid;
-    border-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color)) 1;
+    padding: 56px 20px;
+    border-top: 1px solid rgba(148, 163, 184, 0.18);
 }
 
 footer p {
     margin: 10px 0;
-    font-size: 16px;
+    font-size: 1rem;
+    color: var(--text-muted-on-dark);
+}
+
+.footer-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    color: #fff;
+    margin: 0 0 8px;
+}
+
+.footer-email {
+    font-size: 1.125rem;
+}
+
+.footer-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin: 28px 0 36px;
+}
+
+.footer-copyright {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    border-top: 1px solid rgba(148, 163, 184, 0.18);
+    padding-top: 24px;
+    margin: 0;
 }
 
 footer a {
     color: var(--accent-gold);
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: color 0.25s ease;
 }
 
 footer a:hover {
-    color: white;
+    color: #fff;
     text-decoration: underline;
+}
+
+/* The CTA buttons shouldn't inherit the plain footer link styling */
+.footer-actions a:hover {
+    text-decoration: none;
+}
+
+.footer-actions .btn {
+    color: var(--dark-color);
+}
+
+.footer-actions .btn--ghost {
+    color: #fff;
+}
+
+.footer-actions .btn--ghost:hover {
+    color: var(--accent-gold);
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 760px) {
+    .nav-toggle {
+        display: block;
+        order: 2;
+    }
+
+    header nav {
+        padding-block: 14px;
+    }
+
+    header ul {
+        order: 3;
+        flex-basis: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        /* Collapsed by default on mobile */
+        display: none;
+    }
+
+    header ul.is-open {
+        display: flex;
+        padding-bottom: 12px;
+    }
+
+    header li {
+        width: 100%;
+        border-top: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    header a:not(.logo) {
+        display: block;
+        width: 100%;
+        padding: 14px 2px;
+    }
+
+    /* The sliding underline looks wrong on stacked mobile links */
+    header a:not(.logo)::after {
+        display: none;
+    }
+
+    .service-card {
+        padding: 32px 24px;
+    }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }

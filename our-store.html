@@ -4,54 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Store | Project Future LLC</title>
+    <meta name="description" content="Browse Project Future LLC services including notary, art certification tiers, OCDS platforms, and roadside assistance.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Project Future</div>
-            <ul>
+            <a href="index.html" class="logo">Project Future LLC</a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul id="primary-nav">
                 <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
                 <li><a href="our-store.html">Store</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="container">
-        <h2 class="section-title">Our Store</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <h3>Notary</h3>
-                <p>Price: $1.00</p>
-            </div>
-            <div class="service-card">
-                <h3>PFL OCDS All Platforms</h3>
-                <p>Price: $50.00</p>
-            </div>
-            <div class="service-card">
-                <h3>Art Certification - Silver Tier</h3>
-                <p>Price: $50.00</p>
-            </div>
-            <div class="service-card">
-                <h3>Art Certification - Gold Tier</h3>
-                <p>Price: $100.00</p>
-            </div>
-            <div class="service-card">
-                <h3>Art Certification - Platinum Tier</h3>
-                <p>Price: $200.00</p>
-            </div>
-            <div class="service-card">
-                <h3>Roadside Assistance (M-F from 4PM to 9PM)</h3>
-                <p>Price: $100.00</p>
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Store</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Notary</h3>
+                    <p class="price">$1.00</p>
+                </div>
+                <div class="service-card">
+                    <h3>PFL OCDS All Platforms</h3>
+                    <p class="price">$50.00</p>
+                </div>
+                <div class="service-card">
+                    <h3>Art Certification - Silver Tier</h3>
+                    <p class="price">$50.00</p>
+                </div>
+                <div class="service-card">
+                    <h3>Art Certification - Gold Tier</h3>
+                    <p class="price">$100.00</p>
+                </div>
+                <div class="service-card">
+                    <h3>Art Certification - Platinum Tier</h3>
+                    <p class="price">$200.00</p>
+                </div>
+                <div class="service-card">
+                    <h3>Roadside Assistance</h3>
+                    <p>M-F from 4PM to 9PM</p>
+                    <p class="price">$100.00</p>
+                </div>
             </div>
         </div>
     </section>
 
     <footer id="contact">
-        <p>Copyright © 2026 Project Future - All Rights Reserved.</p>
-        <p><a href="mailto:projectfuturellc@gmail.com">projectfuturellc@gmail.com</a></p>
+        <div class="container">
+            <h2 class="footer-title">Get In Touch</h2>
+            <p class="footer-email"><a href="mailto:projectfuturellc@gmail.com">projectfuturellc@gmail.com</a></p>
+            <div class="footer-actions">
+                <a class="btn btn--ghost" href="https://maps.google.com/maps?cid=11553199456930957904" target="_blank" rel="noopener noreferrer">View Our Google Profile</a>
+                <a class="btn" href="https://search.google.com/local/writereview?placeid=ChIJAciReDO0tiIRUAqb0bE1VaA" target="_blank" rel="noopener noreferrer">Leave Us A Review</a>
+            </div>
+            <p class="footer-copyright">Copyright © 2026 Project Future - All Rights Reserved.</p>
+        </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
