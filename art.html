@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Certification &amp; NFT Services | Project Future LLC</title>
+    <meta name="description" content="Art certification from Project Future LLC in Silver, Gold, and Platinum tiers, plus NFT minting and tokenisation for original artwork. Certification from $50, NFT services from $100.">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Applied before first paint so the theme never flashes
+        (function () {
+            try {
+                var t = localStorage.getItem('pf-theme');
+                if (t === 'dark' || t === 'light') {
+                    document.documentElement.setAttribute('data-theme', t);
+                }
+            } catch (e) { /* storage blocked, fall back to the OS preference */ }
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="logo-mark.png" alt="" width="28" height="28"><span>Project Future</span></a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul id="primary-nav">
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="our-store.html">Pricing</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme" aria-pressed="false">
+                <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+                <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+            <a href="index.html#contact" class="btn btn--primary btn--sm nav-cta">Get in touch</a>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <p class="breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#services">Services</a> &rsaquo; Art Certification &amp; NFT</p>
+            <h1>Art Certification &amp; NFT Services</h1>
+            <p class="lead">Documented provenance for original artwork, in three certification tiers, with optional minting to the blockchain as an NFT.</p>
+            <div class="page-meta">
+                <span class="tag">Certification from $50</span>
+                <span class="tag">NFT services from $100</span>
+                <span class="tag">Silver, Gold &amp; Platinum</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="detail-layout">
+                <div class="prose">
+                    <h2>What art certification is</h2>
+                    <p>Certification is a documented record of a piece: what it is, who made it, when, how it was made, and the chain of ownership we were able to verify. It gives a buyer, a gallery, or an insurer something concrete to work from instead of a verbal history.</p>
+                    <ul>
+                        <li><strong>Work record.</strong> Title, artist, dimensions, medium, materials, and date of completion.</li>
+                        <li><strong>Photographic documentation.</strong> High resolution images of the front, back, signature, and any marks or damage.</li>
+                        <li><strong>Provenance notes.</strong> Ownership history as far as it can be evidenced, with gaps stated plainly.</li>
+                        <li><strong>Digital fingerprint.</strong> A cryptographic hash of the record and images, so any later alteration is detectable.</li>
+                    </ul>
+
+                    <h2>Choosing a tier</h2>
+                    <p>All three tiers produce a certificate and a digital record. They differ in how much documentation and verification work goes into it. Silver suits a single straightforward piece, Gold suits work being sold or exhibited, and Platinum suits higher value pieces or a full collection.</p>
+                    <p>The full breakdown of each tier is <a href="#tiers">listed below</a>.</p>
+
+                    <h2 id="nft">NFT minting and tokenisation</h2>
+                    <p>If you want the certification record to live on a public blockchain, we can mint it as an NFT. The token points to the certified record and images, so the provenance travels with the piece rather than sitting in a drawer.</p>
+                    <ul>
+                        <li><strong>Minting.</strong> We mint the token on your behalf, to a wallet you control.</li>
+                        <li><strong>Metadata preparation.</strong> Artwork files and certification data formatted to the standard the chain and marketplaces expect.</li>
+                        <li><strong>Decentralised storage.</strong> Images and metadata pinned to IPFS so the token does not point at a link that can quietly disappear.</li>
+                        <li><strong>Wallet setup and handover.</strong> If you do not already have a wallet, we set one up with you and walk through securing it.</li>
+                        <li><strong>Marketplace listing.</strong> Optional help getting the piece listed and presented properly.</li>
+                        <li><strong>Collections and editions.</strong> Multi piece drops and numbered editions, quoted per project.</li>
+                    </ul>
+                    <p>NFT services start at $100 per piece and can be added to any certification tier. Network gas fees and storage costs are passed through at cost, and we confirm the expected amount with you before minting.</p>
+
+                    <h2>What you receive</h2>
+                    <p>Every engagement ends with a certificate and a digital record pack: the documentation, the images, the hash, and, where applicable, the token details and wallet address. It is prepared so you can hand it to a buyer, a gallery, or an insurer and have it stand up.</p>
+                    <div class="note-box">
+                        Certification documents a piece and its provenance. It is not a legal appraisal, a valuation, or investment advice, and NFT services are not a guarantee of resale value. We document only what can be evidenced, and we state any gaps openly.
+                    </div>
+
+                    <h2>How pricing works</h2>
+                    <p>Certification is fixed price by tier, starting at $50. NFT services start at $100 per piece, plus network and storage fees at cost. Collections, editions, and large archives are quoted up front. We confirm scope and cost in writing before any work begins.</p>
+                </div>
+
+                <aside class="price-box">
+                    <span class="label">Certification from</span>
+                    <span class="amount">$50</span>
+                    <span class="qualifier">NFT minting from $100 per piece, plus fees at cost</span>
+                    <ul>
+                        <li>Silver, Gold &amp; Platinum tiers</li>
+                        <li>Photographic documentation</li>
+                        <li>Provenance research</li>
+                        <li>Optional NFT minting</li>
+                        <li>IPFS storage and wallet handover</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn--primary">Certify your artwork</a>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section id="tiers" class="section section--alt">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Certification tiers</span>
+                <h2 class="section-title">Three levels of documentation</h2>
+                <p class="section-lead">Every tier includes a certificate and a digital record. NFT minting can be added to any of them.</p>
+            </div>
+            <div class="grid">
+                <article class="card price-card">
+                    <h3>Silver</h3>
+                    <p class="note">A single piece, documented and certified</p>
+                    <ul class="tier-list">
+                        <li>Certificate of authenticity</li>
+                        <li>Standard photographic record</li>
+                        <li>Artist and work details</li>
+                        <li>Digital record with hash</li>
+                    </ul>
+                    <p class="price">$50.00</p>
+                </article>
+                <article class="card price-card">
+                    <h3>Gold</h3>
+                    <p class="note">For work being sold, exhibited, or insured</p>
+                    <ul class="tier-list">
+                        <li>Everything in Silver</li>
+                        <li>Detailed condition report</li>
+                        <li>High resolution image set</li>
+                        <li>Documented provenance research</li>
+                        <li>Tamper evident certificate</li>
+                    </ul>
+                    <p class="price">$100.00</p>
+                </article>
+                <article class="card price-card">
+                    <h3>Platinum</h3>
+                    <p class="note">Higher value pieces and full collections</p>
+                    <ul class="tier-list">
+                        <li>Everything in Gold</li>
+                        <li>Extended provenance investigation</li>
+                        <li>Materials and technique analysis</li>
+                        <li>Full archival record pack</li>
+                        <li>NFT minting included for one piece</li>
+                        <li>Priority turnaround</li>
+                    </ul>
+                    <p class="price">$200.00</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">How it works</span>
+                <h2 class="section-title">From artwork to verified record</h2>
+            </div>
+            <div class="grid">
+                <article class="card">
+                    <h3>1. Tell us about the piece</h3>
+                    <p>Send us the basics: what it is, who made it, and what you already know about its history.</p>
+                </article>
+                <article class="card">
+                    <h3>2. Documentation</h3>
+                    <p>We photograph and record the work, then research and verify the provenance for your chosen tier.</p>
+                </article>
+                <article class="card">
+                    <h3>3. Certification</h3>
+                    <p>You receive the certificate and the digital record pack, with every finding stated plainly.</p>
+                </article>
+                <article class="card">
+                    <h3>4. Optional minting</h3>
+                    <p>If you want it on chain, we mint the record as an NFT to a wallet you control and hand over the details.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--alt">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Credentials</span>
+                <h2 class="section-title">Blockchain expertise for NFT services</h2>
+                <p class="section-lead">Aubrey Finn's blockchain certification is relevant to the technical side of NFT services. It is not an art authentication or appraisal credential.</p>
+            </div>
+            <div class="grid cred-grid">
+                <article class="card cred">
+                    <span class="cred-issuer">EC-Council</span>
+                    <h3>Certified Blockchain Professional (CBP)</h3>
+                    <p class="cred-id">Credential ID ECC29312939891</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Have a piece you want certified?</h2>
+            <p>Tell us about the artwork and we'll recommend the right tier and confirm the cost in writing.</p>
+            <div class="cta-actions">
+                <a href="index.html#contact" class="btn btn--light">Contact us</a>
+                <a href="our-store.html" class="btn btn--ghost-light">View all pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><img src="logo-mark.png" alt="" width="28" height="28"><span>Project Future</span></a>
+                    <p class="footer-tagline">Integrating AI, human skills, and technology.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="ai.html">AI &amp; Machine Learning</a></li>
+                            <li><a href="cyber.html">Cyber Security</a></li>
+                            <li><a href="cloud-infrastructure.html">Cloud &amp; Infrastructure</a></li>
+                            <li><a href="notary.html">Mobile Notary</a></li>
+                            <li><a href="roadside.html">Roadside Assistance</a></li>
+                            <li><a href="art.html">Art Certification</a></li>
+                            <li><a href="art.html#nft">NFT Services</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="index.html#contact">Contact</a></li>
+                            <li><a href="our-store.html">Pricing</a></li>
+                            <li><a href="https://maps.google.com/maps?cid=11553199456930957904" target="_blank" rel="noopener noreferrer">Google profile</a></li>
+                            <li><a href="https://search.google.com/local/writereview?placeid=ChIJAciReDO0tiIRUAqb0bE1VaA" target="_blank" rel="noopener noreferrer">Leave a review</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-bottom">© 2026 Project Future LLC. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

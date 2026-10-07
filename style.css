@@ -124,7 +124,8 @@ button:focus-visible {
     border-radius: 6px;
 }
 
-section[id] {
+section[id],
+.prose h2[id] {
     scroll-margin-top: calc(var(--header-h) + 24px);
 }
 
@@ -472,22 +473,112 @@ header ul a:hover {
     line-height: 1.6;
 }
 
+/* ---------------- Credentials ---------------- */
+
+.cred-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+}
+
+.card.cred {
+    padding: 24px 22px;
+}
+
+.cred-issuer {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.cred h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.cred .cred-id {
+    font-size: 0.8125rem;
+    color: var(--muted);
+}
+
 /* ---------------- Pricing / store ---------------- */
+
+.price-group + .price-group {
+    margin-top: clamp(36px, 5vw, 56px);
+    padding-top: clamp(36px, 5vw, 56px);
+    border-top: 1px solid var(--line);
+}
+
+.price-group-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 14px;
+    margin-bottom: 22px;
+}
+
+.price-group-title {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.price-group-note {
+    font-size: 0.875rem;
+    color: var(--muted);
+}
+
+/* auto-fill keeps column widths consistent across groups with different card counts */
+.price-group .grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+}
 
 .card.price-card {
     display: flex;
     flex-direction: column;
 }
 
-.price-card h3 {
+.price-card h4 {
+    color: var(--ink);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin: 0 0 6px;
     font-size: 1.0625rem;
-    margin-bottom: 6px;
 }
 
 .price-card .note {
     font-size: 0.875rem;
     color: var(--muted);
     margin-bottom: 18px;
+}
+
+.tier-list {
+    list-style: none;
+    margin: 0 0 20px;
+    padding: 0;
+}
+
+.tier-list li {
+    font-size: 0.9375rem;
+    color: var(--ink-2);
+    margin-bottom: 10px;
+    padding-left: 22px;
+    position: relative;
+}
+
+.tier-list li::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 0.52em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
 }
 
 .price {
@@ -575,7 +666,8 @@ header ul a:hover {
     text-decoration: none;
 }
 
-.card--link:hover h3 {
+.card--link:hover h3,
+.card--link:hover h4 {
     color: var(--accent);
 }
 
