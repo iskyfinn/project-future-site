@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work | Project Future LLC</title>
+    <meta name="description" content="Explore apps and websites developed by Project Future LLC, starting with WillSecure, a separate standalone application at WillSecure.us.">
+    <link rel="canonical" href="https://projectfuturellc.com/our-work.html">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Applied before first paint so the theme never flashes
+        (function () {
+            try {
+                var t = localStorage.getItem('pf-theme');
+                if (t === 'dark' || t === 'light') {
+                    document.documentElement.setAttribute('data-theme', t);
+                }
+            } catch (e) { /* storage blocked, fall back to the OS preference */ }
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="logo-mark.png" alt="" width="28" height="28"><span>Project Future</span></a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul id="primary-nav">
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="our-store.html">Pricing</a></li>
+                <li><a href="our-work.html" aria-current="page">Our Work</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme" aria-pressed="false">
+                <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+                <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+            <a href="index.html#contact" class="btn btn--primary btn--sm nav-cta">Get in touch</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <p class="breadcrumb"><a href="index.html">Home</a> &rsaquo; Our Work</p>
+                <h1>Our Work</h1>
+                <p class="lead">Explore apps and websites developed by Project Future LLC. Each project has its own destination, separate from our company website.</p>
+            </div>
+        </section>
+
+        <section class="section section--alt" aria-labelledby="projects-heading">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Built by Project Future</span>
+                    <h2 class="section-title" id="projects-heading">Apps &amp; websites</h2>
+                    <p class="section-lead">Visit each project's website to learn more. We will add more of our work here as it is ready to share.</p>
+                </div>
+                <div class="grid project-grid">
+                    <article class="card">
+                        <span class="eyebrow">Standalone app</span>
+                        <h3>WillSecure</h3>
+                        <p>A separate application developed by Project Future LLC, with its own dedicated website at WillSecure.us.</p>
+                        <a class="card-more" href="https://willsecure.us/" target="_blank" rel="noopener noreferrer">Visit WillSecure.us &rarr; (opens in a new tab)</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container prose">
+                <h2>Have a project in mind?</h2>
+                <p>We can help turn your idea into a working product or website.</p>
+                <a class="btn btn--primary" href="index.html#contact">Discuss your project</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><img src="logo-mark.png" alt="" width="28" height="28"><span>Project Future</span></a>
+                    <p class="footer-tagline">Integrating AI, human skills, and technology.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="ai.html">AI &amp; Machine Learning</a></li>
+                            <li><a href="cyber.html">Cyber Security</a></li>
+                            <li><a href="cloud-infrastructure.html">Cloud &amp; Infrastructure</a></li>
+                            <li><a href="notary.html">Mobile Notary</a></li>
+                            <li><a href="roadside.html">Roadside Assistance</a></li>
+                            <li><a href="art.html">Art Certification</a></li>
+                            <li><a href="art.html#nft">NFT Services</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="index.html#contact">Contact</a></li>
+                            <li><a href="our-store.html">Pricing</a></li>
+                            <li><a href="our-work.html">Our Work</a></li>
+                            <li><a href="https://maps.google.com/maps?cid=11553199456930957904" target="_blank" rel="noopener noreferrer">Google profile</a></li>
+                            <li><a href="https://search.google.com/local/writereview?placeid=ChIJAciReDO0tiIRUAqb0bE1VaA" target="_blank" rel="noopener noreferrer">Leave a review</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-bottom">&copy; 2026 Project Future LLC. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
